@@ -79,7 +79,7 @@ class Mollie extends PaymentGateway
                             ? $this->formatAmount(site: $cart->site(), amount: $lineItem->get('discount_amount'))
                             : null,
                         'totalAmount' => $this->formatAmount(site: $cart->site(), amount: $lineItem->total()),
-                        'vatRate' => collect($lineItem->get('tax_breakdown'))->sum('rate'),
+                        'vatRate' => number_format(collect($lineItem->get('tax_breakdown'))->sum('rate'), 2, '.', ''),
                         'vatAmount' => $this->formatAmount(site: $cart->site(), amount: $lineItem->taxTotal()),
                         'productUrl' => $lineItem->product()->absoluteUrl(),
                     ];
@@ -91,7 +91,7 @@ class Mollie extends PaymentGateway
                         'quantity' => 1,
                         'unitPrice' => $this->formatAmount(site: $cart->site(), amount: $cart->shippingTotal()),
                         'totalAmount' => $this->formatAmount(site: $cart->site(), amount: $cart->shippingTotal()),
-                        'vatRate' => collect($cart->get('shipping_tax_breakdown'))->sum('rate'),
+                        'vatRate' => number_format(collect($cart->get('shipping_tax_breakdown'))->sum('rate'), 2, '.', ''),
                         'vatAmount' => $this->formatAmount(site: $cart->site(), amount: $cart->get('shipping_tax_total', 0)),
                     ]);
                 })
@@ -127,7 +127,7 @@ class Mollie extends PaymentGateway
     {
         $payment = $this->mollie->payments->get($order->get('mollie_payment_id'));
 
-        if ($payment->status === PaymentStatus::STATUS_CANCELED) {
+        if ($payment->status === PaymentStatus::CANCELED) {
             throw new PreventCheckout(__('Payment was cancelled.'));
         }
 
@@ -159,11 +159,11 @@ class Mollie extends PaymentGateway
         $payment = $this->mollie->payments->get($request->id);
         $order = Facades\Order::query()->where('mollie_payment_id', $payment->id)->first();
 
-        if ($payment->status === PaymentStatus::STATUS_CANCELED) {
+        if ($payment->status === PaymentStatus::CANCELED) {
             $order?->delete();
         }
 
-        if ($payment->status === PaymentStatus::STATUS_PAID) {
+        if ($payment->status === PaymentStatus::PAID) {
             if (! $order) {
                 $cart = Facades\Cart::query()
                     ->where('mollie_payment_id', $payment->id)
