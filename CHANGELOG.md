@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.1.0 (2026-02-20)
+
+### What's new
+- Add "Cancellation Reason" input to order details #138 by @duncanmcclean
+
+### What's fixed
+- Bump `mollie/mollie-api-php` #141 by @duncanmcclean
+- Create orders via webhook when necessary #139 by @duncanmcclean
+- Fix error caused by deleted discount #140 by @duncanmcclean
+
+
+
 ## v1.0.1 (2026-02-12)
 
 ### What's fixed
