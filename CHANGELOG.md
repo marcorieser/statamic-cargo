@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.1 (2026-03-07)
+
+### What's fixed
+- Add conditional capture for payment intent #143 by @Jamesking56
+- Dump redundant sum method and require `statamic/cms` version 6.5 #146 by @marcorieser
+
+
+
 ## v1.1.0 (2026-02-20)
 
 ### What's new
