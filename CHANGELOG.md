@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.2.0 (2026-03-17)
+
+### What's new
+- Supports Laravel 13 [#142](https://github.com/duncanmcclean/cargo/pull/142) by @duncanmcclean
+
+
+
 ## v1.1.2 (2026-03-16)
 
 ### What's fixed
