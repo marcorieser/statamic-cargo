@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.2.1 (2026-03-20)
+
+### What's fixed
+- Avoid error when product in cart is deleted [#154](https://github.com/duncanmcclean/cargo/pull/154) by @duncanmcclean
+- Harden cart redirects [#155](https://github.com/duncanmcclean/cargo/pull/155) by @duncanmcclean
+- Use select mode for tax class field [#156](https://github.com/duncanmcclean/cargo/pull/156) by @duncanmcclean
+- Fix error from states field when editing tax class [#157](https://github.com/duncanmcclean/cargo/pull/157) by @duncanmcclean
+
+
+
 ## v1.2.0 (2026-03-17)
 
 ### What's new
