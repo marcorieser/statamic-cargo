@@ -146,6 +146,13 @@ class Cart implements Arrayable, ArrayAccess, Augmentable, ContainsQueryableValu
     {
         return $this
             ->fluentlyGetOrSet('lineItems')
+            ->getter(function (LineItems $lineItems) {
+                if ($lineItems->rejectInvalidProducts()) {
+                    $this->recalculate();
+                }
+
+                return $lineItems;
+            })
             ->setter(function ($lineItems) {
                 $items = new LineItems;
 
