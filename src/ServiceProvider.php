@@ -74,6 +74,16 @@ class ServiceProvider extends AddonServiceProvider
         ],
     ];
 
+    public function register()
+    {
+        $this->registerSerializableClasses([
+            \DuncanMcClean\Cargo\Cart\Cart::class,
+            \DuncanMcClean\Cargo\Discounts\Discount::class,
+            \DuncanMcClean\Cargo\Orders\Order::class,
+            \DuncanMcClean\Cargo\Products\Product::class,
+        ]);
+    }
+
     public function bootAddon()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/cargo.php', 'statamic.cargo');
