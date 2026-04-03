@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.2.2 (2026-04-03)
+
+### What's fixed
+- Add serializable classes to allowlist [#159](https://github.com/duncanmcclean/cargo/pull/159) by @duncanmcclean
+- Harden OrderBys [#160](https://github.com/duncanmcclean/cargo/pull/160) by @duncanmcclean
+
+
+
 ## v1.2.1 (2026-03-20)
 
 ### What's fixed
