@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.2.3 (2026-04-04)
+
+### What's fixed
+- Add `LineItem` to serializable classes allowlist [#162](https://github.com/duncanmcclean/cargo/pull/162) by @duncanmcclean
+
+
+
 ## v1.2.2 (2026-04-03)
 
 ### What's fixed
