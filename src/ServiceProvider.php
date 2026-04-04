@@ -80,6 +80,8 @@ class ServiceProvider extends AddonServiceProvider
             \DuncanMcClean\Cargo\Cart\Cart::class,
             \DuncanMcClean\Cargo\Discounts\Discount::class,
             \DuncanMcClean\Cargo\Orders\Order::class,
+            \DuncanMcClean\Cargo\Orders\LineItem::class,
+            \DuncanMcClean\Cargo\Orders\LineItems::class,
             \DuncanMcClean\Cargo\Products\Product::class,
         ]);
     }
